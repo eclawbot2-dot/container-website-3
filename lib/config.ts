@@ -11,11 +11,12 @@ export const INSTAGRAM_URL: string | null = INSTAGRAM_HANDLE
   ? `https://instagram.com/${INSTAGRAM_HANDLE}`
   : null;
 
-// Tickets: route to Webook (the official Saudi events/ticketing platform).
-// Points at the Jeddah events listing; swap to the specific event slug when each
-// show goes on sale.
-export const TICKETS_URL: string | null =
-  'https://webook.com/explore?city=JED&country=SA'; // Webook Jeddah events — swap to specific event slug when on sale
+// Tickets: no on-sale ticket link yet. Until a real ticketing URL is confirmed,
+// the UI shows a clearly-labelled "Tickets — coming soon" placeholder (a
+// dimmed, non-link span) instead of an <a href>. Setting a URL here will
+// automatically re-render every Tickets CTA as a live link.
+// TODO: no ticket URL yet — placeholder until on sale
+export const TICKETS_URL: string | null = null;
 
 // Contact email: no live mailbox is provisioned at this address yet, so it is
 // shown as a plain label rather than a mailto: link that would bounce.
