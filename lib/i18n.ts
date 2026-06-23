@@ -165,9 +165,9 @@ export const dict: Record<Lang, Dict> = {
       eventsNote: 'Live electronic music events · Jeddah, Saudi Arabia',
     },
     alt: {
-      hero: 'Aerial view of the Jeddah Red Sea shipping-container terminal, stacked containers and gantry cranes along the water — the setting for The Container venue.',
-      containerStack: 'Container ships, gantry cranes and towering stacks of steel shipping containers at the working port terminal.',
-      seaNight: 'Waves breaking along the Red Sea shoreline at the Jeddah waterfront, beside the container port.',
+      hero: 'A packed night crowd raises their hands before a blazing stage of light and haze at The Container — a live electronic-music event staged in the raw industrial port.',
+      containerStack: 'Crowd with hands in the air in front of a towering steel-truss festival stage rig lit purple, smoke and beams over the industrial venue at The Container.',
+      seaNight: 'Dancers silhouetted in a raw concrete-and-steel warehouse, exposed pipes overhead and stage light cutting through haze at The Container.',
     },
     months: [
       'January', 'February', 'March', 'April', 'May', 'June',
@@ -263,9 +263,9 @@ export const dict: Record<Lang, Dict> = {
       eventsNote: 'فعاليات موسيقى إلكترونية حيّة · جدة، المملكة العربية السعودية',
     },
     alt: {
-      hero: 'منظر جوي لمحطة حاويات الشحن في ميناء جدة على البحر الأحمر، حاويات متراكمة وروافع عملاقة على ضفاف الماء — موقع مكان ذا كونتينر.',
-      containerStack: 'سفن حاويات وروافع عملاقة وأكوام شاهقة من حاويات الشحن الفولاذية في محطة الميناء العاملة.',
-      seaNight: 'أمواج تتكسر على شاطئ البحر الأحمر عند واجهة جدة البحرية، بجوار ميناء الحاويات.',
+      hero: 'حشد ليلي غفير يرفع أيديه أمام مسرح متوهج بالأضواء والدخان في ذا كونتينر — حفل موسيقى إلكترونية حية في الميناء الصناعي الخام.',
+      containerStack: 'حشد يرفع أيديه أمام هيكل مسرح مهرجان فولاذي شاهق مضاء بالأرجواني، دخان وأشعة ضوئية فوق المكان الصناعي في ذا كونتينر.',
+      seaNight: 'راقصون بظلال داكنة في مستودع خرساني فولاذي خام، أنابيب مكشوفة في الأعلى وضوء المسرح يخترق الضباب في ذا كونتينر.',
     },
     months: [
       'يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو',

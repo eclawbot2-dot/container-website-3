@@ -60,9 +60,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/photos/hero-port.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'The Container — shipping-container venue on the Jeddah Red Sea port at dusk',
+        width: 1920,
+        height: 1280,
+        alt: 'The Container — a packed night crowd and blazing stage at a live electronic-music event in the Jeddah Red Sea industrial port',
       },
     ],
   },
