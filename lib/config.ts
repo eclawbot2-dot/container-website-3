@@ -11,11 +11,11 @@ export const INSTAGRAM_URL: string | null = INSTAGRAM_HANDLE
   ? `https://instagram.com/${INSTAGRAM_HANDLE}`
   : null;
 
-// Tickets: NO verified ticketing URL is known. We never point "Tickets" at a
-// guessed ticketer or at Instagram. Until a real URL is confirmed, the UI shows
-// a visible "tickets coming soon" placeholder (no link).
-// TODO real ticket URL unknown — set TICKETS_URL to enable live ticket links.
-export const TICKETS_URL: string | null = null;
+// Tickets: route to Webook (the official Saudi events/ticketing platform).
+// Points at the Jeddah events listing; swap to the specific event slug when each
+// show goes on sale.
+export const TICKETS_URL: string | null =
+  'https://webook.com/explore?city=JED&country=SA'; // Webook Jeddah events — swap to specific event slug when on sale
 
 // Contact email: no live mailbox is provisioned at this address yet, so it is
 // shown as a plain label rather than a mailto: link that would bounce.

@@ -6,6 +6,7 @@ import {
   INSTAGRAM_HANDLE,
   CONTACT_EMAIL,
   CONTACT_EMAIL_LIVE,
+  TICKETS_URL,
 } from '@/lib/config';
 
 export default function Footer() {
@@ -30,6 +31,25 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col gap-6 sm:flex-row sm:gap-16">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide2 text-amber-glow">
+                {t.nav.tickets}
+              </p>
+              {TICKETS_URL ? (
+                <a
+                  href={TICKETS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 block text-sm text-bone/80 transition-colors hover:text-amber-glow"
+                >
+                  {t.event.ticketsCta}
+                </a>
+              ) : (
+                <span className="mt-2 block text-sm text-bone/45">
+                  {t.event.ticketsSoon}
+                </span>
+              )}
+            </div>
             <div>
               <p className="text-xs font-semibold uppercase tracking-wide2 text-amber-glow">
                 {t.footer.follow}

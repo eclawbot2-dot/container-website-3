@@ -122,7 +122,7 @@ export const dict: Record<Lang, Dict> = {
       genreTitle: 'Sound',
       lineupNote: 'Lineup subject to change.',
       ticketsTitle: 'Tickets',
-      ticketsCta: 'Get tickets',
+      ticketsCta: 'Buy tickets',
       ticketsSoon: 'Tickets coming soon',
       ticketsSoonNote:
         'Ticketing for this event has not been released yet. Ticket links will be published here once on sale.',
@@ -220,7 +220,7 @@ export const dict: Record<Lang, Dict> = {
       genreTitle: 'الأسلوب',
       lineupNote: 'العروض قابلة للتغيير.',
       ticketsTitle: 'التذاكر',
-      ticketsCta: 'احصل على التذاكر',
+      ticketsCta: 'اشترِ التذاكر',
       ticketsSoon: 'التذاكر قريبًا',
       ticketsSoonNote:
         'لم تُطرح تذاكر هذه الفعالية بعد. ستُنشَر روابط التذاكر هنا فور توفّرها.',
