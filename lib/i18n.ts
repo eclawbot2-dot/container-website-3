@@ -21,10 +21,31 @@ export type Dict = {
     eyebrow: string;
     title: string;
     subtitle: string;
-    ticketsCta: string;
+    detailsCta: string;
     tba: string;
     note: string;
   };
+  event: {
+    backToEvents: string;
+    backHome: string;
+    eyebrow: string;
+    whenTitle: string;
+    timeApprox: string;
+    timeTba: string;
+    whereTitle: string;
+    bioTitle: string;
+    genreTitle: string;
+    lineupNote: string;
+    ticketsTitle: string;
+    ticketsCta: string;
+    ticketsSoon: string;
+    ticketsSoonNote: string;
+    mapCta: string;
+    mapTitle: string;
+    notFound: string;
+  };
+  igPlaceholder: string;
+  bios: Record<string, string[]>;
   visit: {
     eyebrow: string;
     title: string;
@@ -85,9 +106,38 @@ export const dict: Record<Lang, Dict> = {
       eyebrow: 'Upcoming',
       title: 'Events & Lineup',
       subtitle: 'World-class techno and house, on the edge of the Red Sea.',
-      ticketsCta: 'Tickets & info',
+      detailsCta: 'Event details',
       tba: 'More to be announced',
-      note: 'Lineup and dates are subject to change. Follow our Instagram for the latest announcements and ticketing.',
+      note: 'Lineup and dates are subject to change. Ticketing and announcements are published per event.',
+    },
+    event: {
+      backToEvents: 'All events',
+      backHome: 'Back to home',
+      eyebrow: 'Live at The Container',
+      whenTitle: 'When',
+      timeApprox: 'Doors / set from approx.',
+      timeTba: 'Set times announced closer to the date.',
+      whereTitle: 'Where',
+      bioTitle: 'About the artist',
+      genreTitle: 'Sound',
+      lineupNote: 'Lineup subject to change.',
+      ticketsTitle: 'Tickets',
+      ticketsCta: 'Get tickets',
+      ticketsSoon: 'Tickets coming soon',
+      ticketsSoonNote:
+        'Ticketing for this event has not been released yet. Ticket links will be published here once on sale.',
+      mapCta: 'Open in Maps',
+      mapTitle: 'Map showing The Container venue, Jeddah Red Sea port',
+      notFound: 'Event not found.',
+    },
+    igPlaceholder: 'Instagram coming soon',
+    bios: {
+      'anja-schneider': [
+        'Berlin-based DJ, producer and broadcaster — a long-standing figure in international house and techno, and founder of the SOUS Music label.',
+      ],
+      cassy: [
+        'Austrian-Greek DJ and producer celebrated for deep, hypnotic house and techno and long, immersive sets; founder of Kwench Records.',
+      ],
     },
     visit: {
       eyebrow: 'Plan your night',
@@ -97,7 +147,7 @@ export const dict: Record<Lang, Dict> = {
         'Shams Container Terminal, Al Moulysaa district, Jeddah port area, Red Sea coast, Saudi Arabia.',
       gettingThereTitle: 'Getting there',
       gettingThere:
-        'The venue sits inside the industrial port zone on the waterfront. We recommend arriving by car or ride-hailing; on-site directions and the entry gate are shared with each event announcement on Instagram.',
+        'The venue sits inside the industrial port zone on the waterfront. We recommend arriving by car or ride-hailing; on-site directions and the entry gate are shared with each event announcement.',
       hoursTitle: 'Timing',
       hours:
         'Doors and set times are published per event. Sets typically run from late afternoon through the night.',
@@ -154,9 +204,38 @@ export const dict: Record<Lang, Dict> = {
       eyebrow: 'القادم',
       title: 'الفعاليات والعروض',
       subtitle: 'تكنو وهاوس على أعلى مستوى، على حافة البحر الأحمر.',
-      ticketsCta: 'التذاكر والمعلومات',
+      detailsCta: 'تفاصيل الفعالية',
       tba: 'سيُعلن عن المزيد',
-      note: 'العروض والتواريخ قابلة للتغيير. تابع حسابنا على إنستغرام لآخر الإعلانات والتذاكر.',
+      note: 'العروض والتواريخ قابلة للتغيير. تُنشَر التذاكر والإعلانات لكل فعالية على حدة.',
+    },
+    event: {
+      backToEvents: 'كل الفعاليات',
+      backHome: 'العودة إلى الرئيسية',
+      eyebrow: 'مباشرةً في ذا كونتينر',
+      whenTitle: 'الموعد',
+      timeApprox: 'الأبواب / بداية العرض تقريبًا',
+      timeTba: 'يُعلَن عن مواعيد العروض قُرب التاريخ.',
+      whereTitle: 'المكان',
+      bioTitle: 'عن الفنان',
+      genreTitle: 'الأسلوب',
+      lineupNote: 'العروض قابلة للتغيير.',
+      ticketsTitle: 'التذاكر',
+      ticketsCta: 'احصل على التذاكر',
+      ticketsSoon: 'التذاكر قريبًا',
+      ticketsSoonNote:
+        'لم تُطرح تذاكر هذه الفعالية بعد. ستُنشَر روابط التذاكر هنا فور توفّرها.',
+      mapCta: 'افتح في الخرائط',
+      mapTitle: 'خريطة توضّح موقع ذا كونتينر، ميناء جدة على البحر الأحمر',
+      notFound: 'الفعالية غير موجودة.',
+    },
+    igPlaceholder: 'إنستغرام قريبًا',
+    bios: {
+      'anja-schneider': [
+        'منسّقة أغانٍ ومنتجة ومذيعة مقيمة في برلين — شخصية راسخة منذ زمن طويل في موسيقى الهاوس والتكنو العالمية، ومؤسِّسة لِيبل SOUS Music.',
+      ],
+      cassy: [
+        'منسّقة أغانٍ ومنتجة نمساوية يونانية، اشتهرت بموسيقى هاوس وتكنو عميقة وساحرة وبعروض طويلة غامرة؛ مؤسِّسة Kwench Records.',
+      ],
     },
     visit: {
       eyebrow: 'خطّط لليلتك',
@@ -166,7 +245,7 @@ export const dict: Record<Lang, Dict> = {
         'محطة شمس للحاويات، حي المُليساء، منطقة ميناء جدة، ساحل البحر الأحمر، المملكة العربية السعودية.',
       gettingThereTitle: 'كيفية الوصول',
       gettingThere:
-        'يقع المكان داخل منطقة الميناء الصناعية على الواجهة البحرية. نوصي بالوصول بالسيارة أو خدمات النقل التشاركي؛ تُشارَك إرشادات الوصول وبوابة الدخول مع كل إعلان فعالية على إنستغرام.',
+        'يقع المكان داخل منطقة الميناء الصناعية على الواجهة البحرية. نوصي بالوصول بالسيارة أو خدمات النقل التشاركي؛ تُشارَك إرشادات الوصول وبوابة الدخول مع كل إعلان فعالية.',
       hoursTitle: 'المواعيد',
       hours:
         'تُنشَر مواعيد الأبواب والعروض لكل فعالية. عادةً ما تمتد العروض من بعد الظهر حتى الليل.',
@@ -207,4 +286,10 @@ export function formatEventDate(iso: string, lang: Lang): string {
   return lang === 'ar'
     ? `${wd} · ${day} ${month} ${year}`
     : `${wd} · ${day} ${month} ${year}`;
+}
+
+/** Format a 24h "HH:MM" time string for display (kept simple; Western digits). */
+export function formatEventTime(time: string | undefined): string | null {
+  if (!time) return null;
+  return time; // already in readable HH:MM 24h form
 }

@@ -1,8 +1,9 @@
 'use client';
 
+import Link from 'next/link';
 import { useLang } from './LanguageContext';
 import Reveal from './Reveal';
-import { EVENTS, INSTAGRAM_URL } from '@/lib/config';
+import { EVENTS } from '@/lib/config';
 import { formatEventDate } from '@/lib/i18n';
 import { EVENT_PHOTOS, PHOTOS } from '@/lib/photos';
 
@@ -40,6 +41,7 @@ export default function Lineup() {
           {EVENTS.map((ev, i) => {
             const photo = EVENT_PHOTOS[ev.id] ?? PHOTOS.crowdLights;
             const artist = ev.tba ? t.lineup.tba : ev.artist;
+            const href = ev.hasPage ? `/events/${ev.id}/` : null;
             return (
               <Reveal key={ev.id} delay={i * 130}>
                 <article className="group relative overflow-hidden rounded-2xl border border-bone/12 bg-midnight/40">
@@ -68,21 +70,20 @@ export default function Lineup() {
                         {artist}
                       </h3>
                     </div>
-                    {!ev.tba ? (
-                      <a
-                        href={INSTAGRAM_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    {href ? (
+                      <Link
+                        href={href}
+                        aria-label={`${t.lineup.detailsCta} — ${ev.artist}`}
                         className="inline-flex shrink-0 items-center gap-2 self-start rounded-full bg-amber-stage px-6 py-3 text-sm font-semibold uppercase tracking-wide2 text-abyss transition-all duration-300 hover:bg-amber-glow sm:self-auto"
                       >
-                        {t.lineup.ticketsCta}
+                        {t.lineup.detailsCta}
                         <span
                           aria-hidden
                           className="transition-transform duration-300 group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1"
                         >
                           →
                         </span>
-                      </a>
+                      </Link>
                     ) : (
                       <span className="inline-flex shrink-0 items-center self-start rounded-full border border-bone/25 px-6 py-3 text-sm font-medium uppercase tracking-wide2 text-bone/60 sm:self-auto">
                         {t.lineup.tba}

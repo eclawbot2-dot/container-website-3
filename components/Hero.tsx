@@ -57,14 +57,20 @@ export default function Hero() {
               →
             </span>
           </a>
-          <a
-            href={INSTAGRAM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-bone/30 px-7 py-3.5 text-sm font-medium uppercase tracking-wide2 text-bone/90 backdrop-blur-sm transition-all duration-300 hover:border-amber-glow hover:text-amber-glow"
-          >
-            {t.hero.instagram}
-          </a>
+          {INSTAGRAM_URL ? (
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-bone/30 px-7 py-3.5 text-sm font-medium uppercase tracking-wide2 text-bone/90 backdrop-blur-sm transition-all duration-300 hover:border-amber-glow hover:text-amber-glow"
+            >
+              {t.hero.instagram}
+            </a>
+          ) : (
+            <span className="inline-flex cursor-default items-center gap-2 rounded-full border border-bone/20 px-7 py-3.5 text-sm font-medium uppercase tracking-wide2 text-bone/45 backdrop-blur-sm">
+              {t.igPlaceholder}
+            </span>
+          )}
         </div>
       </div>
 

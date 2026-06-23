@@ -1,7 +1,12 @@
 'use client';
 
 import { useLang } from './LanguageContext';
-import { INSTAGRAM_URL, INSTAGRAM_HANDLE, CONTACT_EMAIL } from '@/lib/config';
+import {
+  INSTAGRAM_URL,
+  INSTAGRAM_HANDLE,
+  CONTACT_EMAIL,
+  CONTACT_EMAIL_LIVE,
+} from '@/lib/config';
 
 export default function Footer() {
   const { t, lang } = useLang();
@@ -29,25 +34,37 @@ export default function Footer() {
               <p className="text-xs font-semibold uppercase tracking-wide2 text-amber-glow">
                 {t.footer.follow}
               </p>
-              <a
-                href={INSTAGRAM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 block text-sm text-bone/80 transition-colors hover:text-amber-glow"
-              >
-                @{INSTAGRAM_HANDLE}
-              </a>
+              {INSTAGRAM_URL && INSTAGRAM_HANDLE ? (
+                <a
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 block text-sm text-bone/80 transition-colors hover:text-amber-glow"
+                >
+                  @{INSTAGRAM_HANDLE}
+                </a>
+              ) : (
+                <span className="mt-2 block text-sm text-bone/45">
+                  {t.igPlaceholder}
+                </span>
+              )}
             </div>
             <div>
               <p className="text-xs font-semibold uppercase tracking-wide2 text-amber-glow">
                 {t.footer.contact}
               </p>
-              <a
-                href={`mailto:${CONTACT_EMAIL}`}
-                className="mt-2 block text-sm text-bone/80 transition-colors hover:text-amber-glow"
-              >
-                {CONTACT_EMAIL}
-              </a>
+              {CONTACT_EMAIL_LIVE ? (
+                <a
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  className="mt-2 block text-sm text-bone/80 transition-colors hover:text-amber-glow"
+                >
+                  {CONTACT_EMAIL}
+                </a>
+              ) : (
+                <span className="mt-2 block text-sm text-bone/55">
+                  {CONTACT_EMAIL}
+                </span>
+              )}
             </div>
           </div>
         </div>
