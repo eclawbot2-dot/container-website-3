@@ -115,9 +115,9 @@ export const dict: Record<Lang, Dict> = {
       eventsNote: 'Live electronic music events · Jeddah, Saudi Arabia',
     },
     alt: {
-      hero: 'Stacked shipping containers at the Jeddah Red Sea port at dusk, the setting for The Container venue.',
-      containerStack: 'Towering stacks of steel shipping containers lit at night at the industrial port terminal.',
-      seaNight: 'The Red Sea waterfront at night beside the Jeddah container port.',
+      hero: 'Aerial view of the Jeddah Red Sea shipping-container terminal, stacked containers and gantry cranes along the water — the setting for The Container venue.',
+      containerStack: 'Container ships, gantry cranes and towering stacks of steel shipping containers at the working port terminal.',
+      seaNight: 'Waves breaking along the Red Sea shoreline at the Jeddah waterfront, beside the container port.',
     },
     months: [
       'January', 'February', 'March', 'April', 'May', 'June',
@@ -184,9 +184,9 @@ export const dict: Record<Lang, Dict> = {
       eventsNote: 'فعاليات موسيقى إلكترونية حيّة · جدة، المملكة العربية السعودية',
     },
     alt: {
-      hero: 'حاويات شحن متراكمة في ميناء جدة على البحر الأحمر عند الغروب، موقع مكان ذا كونتينر.',
-      containerStack: 'أكوام شاهقة من حاويات الشحن الفولاذية مضاءة ليلاً في محطة الميناء الصناعية.',
-      seaNight: 'واجهة البحر الأحمر ليلاً بجوار ميناء حاويات جدة.',
+      hero: 'منظر جوي لمحطة حاويات الشحن في ميناء جدة على البحر الأحمر، حاويات متراكمة وروافع عملاقة على ضفاف الماء — موقع مكان ذا كونتينر.',
+      containerStack: 'سفن حاويات وروافع عملاقة وأكوام شاهقة من حاويات الشحن الفولاذية في محطة الميناء العاملة.',
+      seaNight: 'أمواج تتكسر على شاطئ البحر الأحمر عند واجهة جدة البحرية، بجوار ميناء الحاويات.',
     },
     months: [
       'يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو',
