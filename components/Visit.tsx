@@ -2,11 +2,11 @@
 
 import { useLang } from './LanguageContext';
 import Reveal from './Reveal';
-import { MAPS_URL, STATIC_MAP_URL } from '@/lib/config';
+import { MAPS_URL, mapEmbedUrl } from '@/lib/config';
 import { PHOTOS } from '@/lib/photos';
 
 export default function Visit() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
 
   const blocks = [
     { title: t.visit.addressTitle, body: t.visit.address },
@@ -23,8 +23,7 @@ export default function Visit() {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={PHOTOS.seaNight}
-        alt=""
-        aria-hidden
+        alt={t.alt.seaNight}
         loading="lazy"
         decoding="async"
         className="duotone-img absolute inset-0 h-full w-full object-cover"
@@ -58,30 +57,33 @@ export default function Visit() {
           </div>
         </div>
 
-        {/* Map */}
+        {/* Map — reliable no-API-key Google Maps embed, graded to the
+            cinematic teal-night palette, with an "Open in Maps" CTA. */}
         <Reveal delay={160} className="lg:pt-16">
-          <a
-            href={MAPS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group block overflow-hidden rounded-2xl border border-bone/15 bg-midnight/50 shadow-2xl"
-          >
-            <div className="relative aspect-[4/3] w-full overflow-hidden">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={STATIC_MAP_URL}
-                alt=""
-                aria-hidden
+          <div className="overflow-hidden rounded-2xl border border-bone/15 bg-midnight/50 shadow-2xl">
+            <div className="map-frame relative aspect-[4/3] w-full overflow-hidden">
+              <iframe
+                key={lang}
+                title={t.visit.mapTitle}
+                src={mapEmbedUrl(lang)}
                 loading="lazy"
-                decoding="async"
-                className="h-full w-full object-cover opacity-90 grayscale-[0.2] transition-all duration-500 group-hover:scale-[1.03] group-hover:opacity-100"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+                className="absolute inset-0 h-full w-full border-0"
               />
+              {/* Teal/amber wash to fuse the map into the cinematic look.
+                  pointer-events-none so the live map stays pannable. */}
               <div
                 aria-hidden
-                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-abyss/55 to-transparent"
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-abyss/45 via-teal-deep/10 to-transparent mix-blend-multiply"
               />
             </div>
-            <span className="flex items-center justify-between px-6 py-4 text-sm font-medium uppercase tracking-wide2 text-bone/85 transition-colors group-hover:text-amber-glow">
+            <a
+              href={MAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex min-h-[48px] items-center justify-between px-6 py-4 text-sm font-medium uppercase tracking-wide2 text-bone/85 transition-colors hover:text-amber-glow focus-visible:text-amber-glow"
+            >
               {t.visit.mapCta}
               <span
                 aria-hidden
@@ -89,8 +91,8 @@ export default function Visit() {
               >
                 →
               </span>
-            </span>
-          </a>
+            </a>
+          </div>
         </Reveal>
       </div>
     </section>

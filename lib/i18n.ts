@@ -35,6 +35,7 @@ export type Dict = {
     hoursTitle: string;
     hours: string;
     mapCta: string;
+    mapTitle: string;
     entryTitle: string;
     entry: string;
   };
@@ -44,6 +45,11 @@ export type Dict = {
     contact: string;
     rights: string;
     eventsNote: string;
+  };
+  alt: {
+    hero: string;
+    containerStack: string;
+    seaNight: string;
   };
   months: string[];
   weekdays: string[];
@@ -96,6 +102,7 @@ export const dict: Record<Lang, Dict> = {
       hours:
         'Doors and set times are published per event. Sets typically run from late afternoon through the night.',
       mapCta: 'Open in Maps',
+      mapTitle: 'Map showing The Container venue, Jeddah Red Sea port',
       entryTitle: 'Entry',
       entry:
         'The Container hosts licensed live electronic-music events. Entry is for ticket-holders; please bring valid ID. Event-specific entry details are confirmed at announcement.',
@@ -106,6 +113,11 @@ export const dict: Record<Lang, Dict> = {
       contact: 'Contact',
       rights: 'All rights reserved.',
       eventsNote: 'Live electronic music events · Jeddah, Saudi Arabia',
+    },
+    alt: {
+      hero: 'Stacked shipping containers at the Jeddah Red Sea port at dusk, the setting for The Container venue.',
+      containerStack: 'Towering stacks of steel shipping containers lit at night at the industrial port terminal.',
+      seaNight: 'The Red Sea waterfront at night beside the Jeddah container port.',
     },
     months: [
       'January', 'February', 'March', 'April', 'May', 'June',
@@ -159,6 +171,7 @@ export const dict: Record<Lang, Dict> = {
       hours:
         'تُنشَر مواعيد الأبواب والعروض لكل فعالية. عادةً ما تمتد العروض من بعد الظهر حتى الليل.',
       mapCta: 'افتح في الخرائط',
+      mapTitle: 'خريطة توضّح موقع ذا كونتينر، ميناء جدة على البحر الأحمر',
       entryTitle: 'الدخول',
       entry:
         'يستضيف ذا كونتينر فعاليات موسيقى إلكترونية حيّة مرخّصة. الدخول لحاملي التذاكر؛ يُرجى إحضار هوية سارية. تُؤكَّد تفاصيل الدخول الخاصة بكل فعالية عند الإعلان عنها.',
@@ -169,6 +182,11 @@ export const dict: Record<Lang, Dict> = {
       contact: 'تواصل',
       rights: 'جميع الحقوق محفوظة.',
       eventsNote: 'فعاليات موسيقى إلكترونية حيّة · جدة، المملكة العربية السعودية',
+    },
+    alt: {
+      hero: 'حاويات شحن متراكمة في ميناء جدة على البحر الأحمر عند الغروب، موقع مكان ذا كونتينر.',
+      containerStack: 'أكوام شاهقة من حاويات الشحن الفولاذية مضاءة ليلاً في محطة الميناء الصناعية.',
+      seaNight: 'واجهة البحر الأحمر ليلاً بجوار ميناء حاويات جدة.',
     },
     months: [
       'يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو',

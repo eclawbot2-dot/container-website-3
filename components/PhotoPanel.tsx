@@ -9,6 +9,7 @@ import { type ReactNode } from 'react';
  */
 export default function PhotoPanel({
   src,
+  alt = '',
   children,
   className = '',
   minH = 'min-h-screen',
@@ -17,6 +18,7 @@ export default function PhotoPanel({
   priority = false,
 }: {
   src: string;
+  alt?: string;
   children?: ReactNode;
   className?: string;
   minH?: string;
@@ -31,8 +33,8 @@ export default function PhotoPanel({
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={src}
-        alt=""
-        aria-hidden
+        alt={alt}
+        {...(alt ? {} : { 'aria-hidden': true })}
         loading={priority ? 'eager' : 'lazy'}
         decoding="async"
         className={`duotone-img absolute inset-0 h-full w-full object-cover ${

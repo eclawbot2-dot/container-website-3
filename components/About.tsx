@@ -11,7 +11,7 @@ export default function About() {
   return (
     <>
       {/* Identity panel over the container-stack photo */}
-      <PhotoPanel src={PHOTOS.containerStack} position="items-center" minH="min-h-screen">
+      <PhotoPanel src={PHOTOS.containerStack} alt={t.alt.containerStack} position="items-center" minH="min-h-screen">
         <div className="ms-auto max-w-2xl text-start">
           <Reveal>
             <p className="font-body text-[0.72rem] font-medium uppercase tracking-mega text-amber-glow">

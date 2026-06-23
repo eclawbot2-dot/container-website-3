@@ -20,6 +20,32 @@ body {
   color: #f3ede2;
   font-family: var(--font-body);
   overflow-x: hidden;
+  /* Respect notch / safe areas on mobile (viewport-fit=cover). */
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* Use small-viewport units where supported so full-bleed panels don't jump
+   as mobile browser chrome shows/hides. Falls back to 100vh on old engines. */
+@supports (height: 100svh) {
+  .min-h-screen {
+    min-height: 100svh;
+  }
+}
+
+/* Prevent the wide editorial letter-spacing from forcing horizontal
+   overflow on very small screens. */
+.tracking-mega {
+  overflow-wrap: anywhere;
+}
+
+/* Visible keyboard focus across all interactive elements. */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #ffb15c;
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 html[dir='rtl'] body {
@@ -117,6 +143,14 @@ html[dir='rtl'] .font-display {
     opacity: 1 !important;
     transform: none !important;
   }
+}
+
+/* Grade the live Google Maps embed into the cinematic teal-night palette
+   without killing interactivity. The iframe itself is filtered; the overlay
+   wash sits above it but is pointer-events-none so the map stays pannable. */
+.map-frame iframe {
+  filter: grayscale(0.4) contrast(1.05) brightness(0.92) saturate(0.85)
+    sepia(0.12) hue-rotate(150deg);
 }
 
 /* Slim, muted scrollbar to keep the cinematic mood. */

@@ -16,8 +16,8 @@ export default function Hero() {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={PHOTOS.hero}
-        alt=""
-        aria-hidden
+        alt={t.alt.hero}
+        fetchPriority="high"
         decoding="async"
         className="duotone-img animate-slowZoom absolute inset-0 h-full w-full object-cover"
       />
