@@ -21,3 +21,13 @@ export const EVENT_PHOTOS: Record<string, string> = {
   cassy: PHOTOS.turntables,
   'tba-1': PHOTOS.crowdSilhouette,
 };
+
+// Intrinsic pixel dimensions of the photos used in OpenGraph/Twitter metadata
+// (verified from the JPEG headers — keep in sync if a file is replaced).
+export const PHOTO_DIMS: Record<string, { width: number; height: number }> = {
+  [PHOTOS.hero]: { width: 1920, height: 1280 },
+  [PHOTOS.djDecks]: { width: 1920, height: 1281 },
+  [PHOTOS.turntables]: { width: 2000, height: 1333 },
+  [PHOTOS.crowdSilhouette]: { width: 2000, height: 1335 },
+  [PHOTOS.crowdLights]: { width: 2000, height: 1335 },
+};

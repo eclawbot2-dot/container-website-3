@@ -127,6 +127,8 @@ const jsonLd = {
     startDate: e.dateISO,
     eventStatus: 'https://schema.org/EventScheduled',
     eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+    // Internal detail-page URL only for shows that actually have one.
+    ...(e.hasPage ? { url: `${SITE_URL}/events/${e.id}/` } : {}),
     performer: { '@type': 'PerformingGroup', name: e.artist },
     location: {
       '@type': 'MusicVenue',

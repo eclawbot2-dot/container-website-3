@@ -131,7 +131,9 @@ export default function EventDetail({ slug }: { slug: string }) {
       </section>
 
       {/* ── Details ─────────────────────────────────────────────── */}
-      <section className="relative w-full bg-abyss py-24 sm:py-32">
+      {/* id="lineup" gives the layout's "Skip to events" link a real target
+          on event pages too (it otherwise only exists on the home page). */}
+      <section id="lineup" className="relative w-full scroll-mt-10 bg-abyss py-24 sm:py-32">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_80%_at_50%_0%,rgba(16,71,79,0.45)_0%,rgba(4,9,12,0)_60%)]"

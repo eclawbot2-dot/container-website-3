@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import EventDetail from '@/components/EventDetail';
 import { EVENT_PAGES, getEvent, VENUE_COORDS } from '@/lib/config';
 import { dict } from '@/lib/i18n';
+import { EVENT_PHOTOS, PHOTOS, PHOTO_DIMS } from '@/lib/photos';
 
 const SITE_URL = 'https://container3.jahdev.com';
 
@@ -25,6 +26,10 @@ export function generateMetadata({
     dict.en.bios[ev.id]?.[0] ??
     `${ev.artist} live at The Container, Shams Container Terminal, Jeddah.`;
   const url = `${SITE_URL}/events/${ev.id}/`;
+  // Share image = the same cinematic backdrop the page hero uses, with its
+  // real intrinsic dimensions (previously hardcoded to a wrong 1200x630).
+  const photo = EVENT_PHOTOS[ev.id] ?? PHOTOS.crowdLights;
+  const dims = PHOTO_DIMS[photo] ?? { width: 1920, height: 1280 };
   return {
     title,
     description: desc,
@@ -35,13 +40,13 @@ export function generateMetadata({
       url,
       siteName: 'The Container',
       type: 'website',
-      images: [{ url: '/photos/dj-decks.jpg', width: 1200, height: 630, alt: title }],
+      images: [{ url: photo, width: dims.width, height: dims.height, alt: title }],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description: desc,
-      images: ['/photos/dj-decks.jpg'],
+      images: [photo],
     },
   };
 }
@@ -63,6 +68,7 @@ export default function EventPage({
   const ev = getEvent(params.slug);
   if (!ev || !ev.hasPage) notFound();
 
+  const photo = EVENT_PHOTOS[ev.id] ?? PHOTOS.crowdLights;
   const startDate = ev.time ? `${ev.dateISO}T${ev.time}:00+03:00` : ev.dateISO;
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -75,7 +81,7 @@ export default function EventPage({
     eventStatus: 'https://schema.org/EventScheduled',
     eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
     url: `${SITE_URL}/events/${ev.id}/`,
-    image: `${SITE_URL}/photos/dj-decks.jpg`,
+    image: `${SITE_URL}${photo}`,
     performer: { '@type': 'PerformingGroup', name: ev.artist },
     location: {
       '@type': 'MusicVenue',

@@ -52,6 +52,10 @@ export type EventItem = {
 
 // Real confirmed lineup (verified via Bandsintown/Shazam). Lineup subject to
 // change. Only entries with hasPage:true get a static /events/[slug] page.
+// KNOWN GAP (static export): past events are not auto-hidden — once a show's
+// date passes, remove/update its entry here and redeploy, otherwise the site
+// keeps listing it under "Upcoming" and its JSON-LD stays EventScheduled.
+// Next date to act on: after 2026-08-21 (Anja Schneider), then 2026-09-11 (Cassy).
 export const EVENTS: EventItem[] = [
   {
     id: 'anja-schneider',
